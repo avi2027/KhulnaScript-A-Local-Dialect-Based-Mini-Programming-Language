@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KhulnaScript Web IDE</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(120deg, #c2e9fb, #a1c4fd);
+            margin: 0;
+            padding: 30px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        textarea {
+            width: 100%;
+            height: 220px;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #27ae60;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #219150;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 25px;
+        }
+        pre {
+            background: #f4f6f7;
+            padding: 15px;
+            border-radius: 10px;
+            height: 200px;
+            overflow: auto;
+        }
+        .label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1> KhulnaScript Web IDE</h1>
+
+    <form method="post">
+        <textarea name="code">
+Write the code here
+jodi (x somman 4) {
+    x rakho x jog dao 5;
+    y rakho y jog dao 3;
+    x rakho x gun dao y;
+    i barai dao;
+}
+na hoile {
+    x rakho i;
+}
+        </textarea>
+
+        <br><br>
+        <center><button type="submit">▶ Run KhulnaScript</button></center>
+    </form>
+
+    <div class="grid">
+        <div>
+            <div class="label">📤 Execution Output</div>
+            <pre>{{ output }}</pre>
+        </div>
+
+        <div>
+            <div class="label">🐍 Converted Python Code</div>
+            <pre>{{ python_text }}</pre>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
