@@ -63,11 +63,10 @@
 <body>
 
 <div class="container">
-    <h1> KhulnaScript Web IDE</h1>
+    <h1>KhulnaScript Online Compiler (Flex/Bison)</h1>
 
     <form method="post">
-        <textarea name="code">
-Write the code here
+        <textarea name="code" placeholder="Write KhulnaScript code here...">{% if code %}{{ code }}{% else %}
 jodi (x somman 4) {
     x rakho x jog dao 5;
     y rakho y jog dao 3;
@@ -76,8 +75,7 @@ jodi (x somman 4) {
 }
 na hoile {
     x rakho i;
-}
-        </textarea>
+}{% endif %}</textarea>
 
         <br><br>
         <center><button type="submit">▶ Run KhulnaScript</button></center>
@@ -85,7 +83,7 @@ na hoile {
 
     <div class="grid">
         <div>
-            <div class="label">📤 Execution Output</div>
+            <div class="label">📤 Execution Output (from Flex/Bison binary)</div>
             <pre>{{ output }}</pre>
         </div>
 
@@ -94,6 +92,12 @@ na hoile {
             <pre>{{ python_text }}</pre>
         </div>
     </div>
+
+    {% if error_text %}
+    <br>
+    <div class="label" style="color:#c0392b;">⚠️ Compiler / Runtime Messages</div>
+    <pre style="background:#fdecea; border:1px solid #e74c3c;">{{ error_text }}</pre>
+    {% endif %}
 </div>
 
 </body>
